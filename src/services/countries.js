@@ -8,9 +8,6 @@ export const useGetCountries = (region, searchStr) => {
 
   if (region === "All" && searchStr === null) {
     queryString = `https://rest-countries-api-with-json-server.vercel.app/countries`;
-  if (region === null && searchStr === null) {
-    queryString = `https://rest-countries-api-with-json-server.vercel.app/countries`;
-    // console.log(queryString);
   }
 
   if (region === "All" && searchStr !== null) {
