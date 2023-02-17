@@ -6,20 +6,20 @@ export const useGetCountries = (region, searchStr) => {
   console.log(searchStr);
   let queryString;
 
-  if (region === "All" && searchStr === null) {
+  if (region === "All" && searchStr === "") {
     queryString = `https://rest-countries-api-with-json-server.vercel.app/countries`;
   }
 
-  if (region === "All" && searchStr !== null) {
+  if (region === "All" && searchStr !== "") {
     queryString = `https://rest-countries-api-with-json-server.vercel.app/countries?name_like=${searchStr}`;
     // console.log(queryString);
   }
 
-  if (region !== "All" && searchStr === null) {
+  if (region !== "All" && searchStr === "") {
     queryString = `https://rest-countries-api-with-json-server.vercel.app/countries?region=${region}`;
     // console.log(queryString);
   }
-  if (region !== "All" && searchStr !== null) {
+  if (region !== "All" && searchStr !== "") {
     queryString = `https://rest-countries-api-with-json-server.vercel.app/countries?region=${region}&name_like=${searchStr}`;
     // console.log(queryString);
   }

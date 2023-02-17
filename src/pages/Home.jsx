@@ -14,18 +14,18 @@ const Home = () => {
   const { isLoading, data } = useGetCountries(contienent, input);
 
   const handleSearchChange = (e) => {
-    if (e.target.value.length === 0) setInput("");
-    else setInput(e.target.value);
+    setInput(e.target.value);
+    //persist on the localStorage
+    localStorage.setItem("searchStr", e.target.value);
   };
 
   const handleContienentChange = (e) => {
-    if (e.target.value === "All") setContienent("All");
-    else setContienent(e.target.value);
+    setContienent(e.target.value);
+    //persist on the localStorage
+    localStorage.setItem("contienent", e.target.value);
   };
 
-  const saveToLocalStorageAndNav = (country) => {
-    localStorage.setItem("searchStr", input);
-    localStorage.setItem("contienent", contienent);
+  const navigateToDetails = (country) => {
     navigate(`/details/${country?.name}`, {
       state: { data: country },
     });
@@ -50,7 +50,7 @@ const Home = () => {
                   name={country.name}
                   population={country.population}
                   navigate={() => {
-                    saveToLocalStorageAndNav(country);
+                    navigateToDetails(country);
                   }}
                   region={country.region}
                   flags={country.flags}
