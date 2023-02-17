@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --body-dark-color: #202c36;
+  --body-light-color: #fff;
+  --container-dark-color: #2b3844;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    font-family: "Nunito Sans", sans-serif;
+  }
+  *,
+  ::after,
+  ::before {
+    @apply box-border;
+    @apply p-0;
+    @apply m-0;
+  }
+
+  #root {
+    @apply p-0;
+  }
+
+  body {
+    @apply transition-all;
+    @apply duration-500;
+    @apply relative;
+    /* @apply leading-[19px]; */
+    @apply overflow-x-hidden;
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  a {
+    @apply no-underline;
+  }
+
+  button {
+    @apply cursor-pointer;
+    @apply border-none;
+    @apply outline-none;
+  }
+}
