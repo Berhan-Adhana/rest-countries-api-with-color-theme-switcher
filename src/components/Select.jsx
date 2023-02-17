@@ -10,13 +10,20 @@ const Select = ({ handleContienentChange, value }) => {
         onChange={handleContienentChange}
       >
         {CONTIENENTS.map((contienent, index) => {
-          if (index === 0)
-            return (
-              <option className="p-2" value={contienent}>
-                Filter by Region
-              </option>
-            );
-          else if (value === contienent)
+          if (index === 0) {
+            if (value === contienent) {
+              return (
+                <option selected className="p-2" value={contienent}>
+                  Filter by Region
+                </option>
+              );
+            } else
+              return (
+                <option className="p-2" value={contienent}>
+                  Filter by Region
+                </option>
+              );
+          } else if (value === contienent)
             return (
               <option selected value={contienent} className="p-2 inline-block">
                 {contienent}
