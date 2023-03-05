@@ -23,7 +23,7 @@ const Details = (props) => {
     useGetCountryByAlpha3Code(country?.borders);
 
   return (
-    <section className="dark:bg-[var(--body-dark-color)] px-7 pt-10 dark:text-white transition-all duration-500">
+    <section className="dark:bg-[var(--body-dark-color)] px-7 py-10 dark:text-white transition-all duration-500">
       <button
         className="px-4 py-2 dark:bg-containerColor dark:text-white shadow-lg flex items-center justify-center gap-x-1 rounded-md"
         onClick={() => {
