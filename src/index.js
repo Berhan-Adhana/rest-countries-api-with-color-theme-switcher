@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./css/style.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Home, Details } from "./pages";
 const Dashboard = () => {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Outlet />
     </div>
   );

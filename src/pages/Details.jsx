@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { BiArrowBack } from "react-icons/bi";
 import { useGetCountryByAlpha3Code } from "../services/countries";
+import Loader from "../components/Loader";
 const Details = (props) => {
   const { state } = useLocation();
   const [country, setCountry] = useState(state.data);
@@ -22,9 +23,9 @@ const Details = (props) => {
     useGetCountryByAlpha3Code(country?.borders);
 
   return (
-    <section className="dark:bg-[var(--body-dark-color)] dark:text-white pt-6 px-5">
+    <section className="dark:bg-[var(--body-dark-color)] px-7 pt-10 dark:text-white transition-all duration-500">
       <button
-        className="px-4 py-2 dark:bg-[var(--container-dark-color)] dark:text-white shadow-lg flex items-center justify-center gap-x-1 rounded-md"
+        className="px-4 py-2 dark:bg-containerColor dark:text-white shadow-lg flex items-center justify-center gap-x-1 rounded-md"
         onClick={() => {
           navigate(-1);
         }}
@@ -33,86 +34,81 @@ const Details = (props) => {
         Back
       </button>
 
-      <div className="container grid  min-h-screen pt-4 md:my-auto md:items-center md:place-items-start">
-        <div className="grid gap-y-8 place-items-center grid-cols-1   md:grid-cols-2  md:gap-x-4 ">
-          <img src={flags.png} alt="" className="rounded-md md:max-w-sm mx-2" />
+      <div className=" grid min-h-screen pt-[64px] lg:pt-[80px]   transition-opacity duration-1000">
+        <article className="grid gap-y-[44px]  grid-cols-1   md:grid-cols-2 md:gap-x-[40px]  xl:gap-x-[144px] ">
+          <img
+            src={flags.png}
+            alt={`${name} "flag"`}
+            className="rounded-md  object-cover h-[275.92px] xl:h-[401px]"
+          />
           {/* right card */}
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
+          <div className="flex flex-col gap-y-4 ">
+
+          <div className=" grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
             {/* right-left card */}
             <div>
-              <h3 className="font-bold text-[22px] md:mb-4 md:text-[32px] md:leading-8">
+              <h3 className="font-[800] text-[22px] leading-[30.01px] lg:text-[32px] lg:leading-[43.65px]">
                 {name}
               </h3>
-              <div className="my-2 leading-8 md:my-0">
-                <p className="font-semibold text-[22px]">
+              <div className="my-2 leading-8 md:my-0 ">
+                <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
                   Native Name:{"  "}
-                  <span className="text-[16px]  font-normal opacity-75">
-                    {nativeName}
-                  </span>
+                  <span className="font-[300]">{nativeName}</span>
                 </p>
-                <p className="font-semibold text-[22px]">
-                  Population:{" "}
-                  <span className="text-[16px]  font-normal opacity-75">
-                    {population}
-                  </span>
+
+                <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
+                  Population: <span className="font-[300]">{population}</span>
                 </p>
-                <p className="font-semibold text-[22px]">
-                  Sub Region:{" "}
-                  <span className="text-[16px]  font-normal opacity-75">
-                    {subregion}
-                  </span>
+
+                <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
+                  Sub Region: <span className="font-[300]">{subregion}</span>
                 </p>
-                <p className="font-semibold text-[22px]">
-                  Capital:{" "}
-                  <span className="text-[16px]  font-normal opacity-75">
-                    {capital}
-                  </span>
+                <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
+                  Capital: <span className="font-[300]">{capital}</span>
                 </p>
               </div>
             </div>
             {/* right-right card */}
 
             <div className="mt-8  leading-8">
-              <p className="font-semibold text-[22px] md:mt-4">
+              <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
                 Top Level Domain:{" "}
-                <span className="text-[16px]  font-normal opacity-75">
-                  {topLevelDomain[0]}
-                </span>
+                <span className="font-[300]">{topLevelDomain[0]}</span>
               </p>
-              <p className="font-semibold text-[22px]">
+              <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
                 Currencies:{" "}
-                <span className="text-[16px]  font-normal opacity-75">
-                  {currencies[0].code}
-                </span>
+                <span className="font-[300]">{currencies[0].code}</span>
               </p>
-              <p className="font-semibold text-[22px]">
+              <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
                 Languages:{" "}
-                <span className="text-[16px]  font-normal opacity-75">
-                  {languages[0].name}
-                </span>
+                <span className="font-[300]">{languages[0].name}</span>
               </p>
+
               {/* Borders */}
             </div>
-            <div>
+          </div>
+            <div className="w-full">
               {isBorderLoading ? (
-                "Loading..."
+                <Loader />
               ) : (
-                <div>
+                <div className="w-full">
                   {}
-                  <h2 className="text-2xl font-bold ">
+                  <h2 className=" font-[600] text-[16px] leading-6 ">
                     Boder Countries:{!borders ? " None" : ""}{" "}
                   </h2>
-                  <div className="flex gap-4 flex-wrap lg:flex-nowrap mt-3">
+                  <div className="flex flex-wrap gap-y-4 gap-x-4 mt-3">
                     {borders?.map((border, index) => {
                       return (
                         <button
-                          className="px-4 py-2 rounded-md min-[100px] shadow-lg dark:bg-[var(--container-dark-color)] "
+                          className="px-4 py-4 rounded-md whitespace-nowrap  text-center shadow-lg dark:bg-containerColor text-[12px] leading-[16.37px]"
                           key={index}
                           onClick={() => {
                             setCountry(border);
                           }}
                         >
-                          {border.name}
+                          {border.name.length > 10
+                            ? `${border.name.slice(0, 10)}  ...`
+                            : border.name}
                         </button>
                       );
                     })}
@@ -121,7 +117,7 @@ const Details = (props) => {
               )}
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );

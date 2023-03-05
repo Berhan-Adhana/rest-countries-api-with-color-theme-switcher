@@ -4,23 +4,25 @@ const Card = (country) => {
   const { name, flags, navigate, population, region, capital } = country;
   return (
     <article
-      className="w-[95%] max-w-sm  mx-auto shadow rounded-md overflow-hidden dark:bg-[var(--container-dark-color)] dark:text-white cursor-pointer"
+      style={{
+        boxShadow: " 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384)",
+      }}
+      className="w-[95%] max-w-sm  mx-auto  rounded-md text-textColor overflow-hidden dark:bg-containerColor dark:text-white cursor-pointer"
       onClick={navigate}
     >
       <img src={flags.png} alt="" className="w-full  h-[160px] object-cover" />
-      <div className="ml-3 my-2">
-        <h3 className="font-bold mb-3">{name}</h3>
-        <p>
-          <span className="font-semibold">population: </span>
+      <div className="px-6 pt-6 pb-[46px] flex flex-col gap-y-2">
+        <h3 className="font-[800] text-[18px] leading-[26px] mb-2">{name}</h3>
+        <p className="text-[14px] leading-4 font-[300]">
+          <span className="font-semibold ">population: </span>
           {population}
         </p>
-        <p>
-          <span className="font-semibold">Region: </span>
+        <p className="text-[14px] leading-4 font-[300]">
+          <span className="font-semibold ">Region: </span>
           {region}
         </p>
-        <p>
-          {" "}
-          <span className="font-semibold">Capital: </span>
+        <p className="text-[14px] leading-4 font-[300]">
+          <span className="font-semibold ">Capital: </span>
           {capital}
         </p>
       </div>

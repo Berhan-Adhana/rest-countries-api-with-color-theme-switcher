@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +7,7 @@
   --body-dark-color: #202c36;
   --body-light-color: #fff;
   --container-dark-color: #2b3844;
+  --text-color: #111517;
 }
 
 @layer base {
@@ -46,5 +47,17 @@
     @apply cursor-pointer;
     @apply border-none;
     @apply outline-none;
+  }
+
+  h1 {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 20px;
+  }
+  @media screen and (min-width: 1024px) {
+    h1 {
+      font-size: 24px;
+      line-height: 32.74px;
+    }
   }
 }

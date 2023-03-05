@@ -3,7 +3,7 @@ import React from "react";
 const Select = ({ handleContienentChange, value }) => {
   const CONTIENENTS = ["All", "Africa", "Americas", "Asia", "Oceania"];
   return (
-    <div className="p-1 shadow mt-3 rounded-md md:mr-4">
+    <div className="p-1 shadow rounded-md max-w-[200px]">
       <select
         id="continents"
         className="outline-0 text-gray-900 text-sm rounded-lg w-full dark:bg-[var(--container-dark-color)] p-3 dark:text-white"
