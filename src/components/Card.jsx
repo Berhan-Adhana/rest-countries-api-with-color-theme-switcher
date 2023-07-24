@@ -7,7 +7,7 @@ const Card = (country) => {
       style={{
         boxShadow: "0px 0px 7px 2px rgba(0, 0, 0, 0.0294384)",
       }}
-      className="w-[95%] max-w-sm mx-auto  rounded-md text-textColor overflow-hidden dark:bg-containerColor dark:text-white cursor-pointer"
+      className="w-[95%] md:max-w-sm mx-auto  rounded-md text-textColor overflow-hidden dark:bg-containerColor dark:text-white cursor-pointer"
       onClick={navigate}
     >
       <img
@@ -25,7 +25,7 @@ const Card = (country) => {
           <span className="font-semibold ">Region: </span>
           {region}
         </p>
-        <p className="text-[14px] leading-4 font-[300]">
+        <p className="text-[14px] leading-4 font-[300] pb-2">
           <span className="font-semibold  ">Capital: </span>
           {capital}
         </p>

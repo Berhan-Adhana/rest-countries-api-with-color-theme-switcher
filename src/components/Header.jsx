@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="h-[56px] shadow w-full p-4 z-[999] fixed inset-0 dark:bg-containerColor text-textColor  dark:text-white flex justify-between items-center">
+    <header className="h-[56px] shadow w-full p-4 z-[999] fixed inset-0 bg-white dark:bg-containerColor text-textColor  dark:text-white flex justify-between items-center">
       <h1>Where in the world?</h1>
       <button
         onClick={toggleTheme}

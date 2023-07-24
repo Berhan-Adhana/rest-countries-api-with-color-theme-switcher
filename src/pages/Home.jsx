@@ -33,8 +33,8 @@ const Home = () => {
   };
 
   return (
-    <main className="dark:bg-[var(--body-dark-color)]  dark:text-white min-h-screen relative">
-      <div className="flex flex-col md:flex-row md:items-center gap-y-10 md:justify-between px-4 pt-6">
+    <main className="dark:bg-[var(--body-dark-color)]  dark:text-white min-h-screen relative px-4 xl:px-[80px]  md:px-[55px] pt-[56px]">
+      <div className="flex flex-col md:flex-row md:items-center gap-y-10 md:justify-between  pt-6">
         <Search input={input} handleChange={handleSearchChange} />
         <Select
           handleContienentChange={handleContienentChange}
@@ -42,7 +42,7 @@ const Home = () => {
         />
       </div>
 
-      <div className="grid gap-y-10 xl:gap-[75px] grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:px-[80px]  px-[55px] pt-[28px] ">
+      <div className="grid gap-y-10 xl:gap-[75px] grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  pt-[28px] ">
         {isLoading ? (
           <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
             <Loader />
