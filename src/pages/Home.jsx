@@ -33,7 +33,7 @@ const Home = () => {
   };
 
   return (
-    <main className="dark:bg-[var(--body-dark-color)]  dark:text-white min-h-screen relative ">
+    <main className="dark:bg-[var(--body-dark-color)]  dark:text-white min-h-screen relative">
       <div className="flex flex-col md:flex-row md:items-center gap-y-10 md:justify-between px-4 pt-6">
         <Search input={input} handleChange={handleSearchChange} />
         <Select

@@ -43,50 +43,49 @@ const Details = (props) => {
           />
           {/* right card */}
           <div className="flex flex-col gap-y-4 ">
+            <div className=" grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
+              {/* right-left card */}
+              <div>
+                <h3 className="font-[800] text-[22px] leading-[30.01px] lg:text-[32px] lg:leading-[43.65px]">
+                  {name}
+                </h3>
+                <div className="my-2 leading-8 md:my-0 ">
+                  <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
+                    Native Name:{"  "}
+                    <span className="font-[300]">{nativeName}</span>
+                  </p>
 
-          <div className=" grid grid-cols-1 md:grid-cols-2 md:gap-x-12">
-            {/* right-left card */}
-            <div>
-              <h3 className="font-[800] text-[22px] leading-[30.01px] lg:text-[32px] lg:leading-[43.65px]">
-                {name}
-              </h3>
-              <div className="my-2 leading-8 md:my-0 ">
+                  <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
+                    Population: <span className="font-[300]">{population}</span>
+                  </p>
+
+                  <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
+                    Sub Region: <span className="font-[300]">{subregion}</span>
+                  </p>
+                  <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
+                    Capital: <span className="font-[300]">{capital}</span>
+                  </p>
+                </div>
+              </div>
+              {/* right-right card */}
+
+              <div className="mt-8  leading-8">
                 <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
-                  Native Name:{"  "}
-                  <span className="font-[300]">{nativeName}</span>
+                  Top Level Domain:{" "}
+                  <span className="font-[300]">{topLevelDomain[0]}</span>
+                </p>
+                <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
+                  Currencies:{" "}
+                  <span className="font-[300]">{currencies[0].code}</span>
+                </p>
+                <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
+                  Languages:{" "}
+                  <span className="font-[300]">{languages[0].name}</span>
                 </p>
 
-                <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
-                  Population: <span className="font-[300]">{population}</span>
-                </p>
-
-                <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
-                  Sub Region: <span className="font-[300]">{subregion}</span>
-                </p>
-                <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
-                  Capital: <span className="font-[300]">{capital}</span>
-                </p>
+                {/* Borders */}
               </div>
             </div>
-            {/* right-right card */}
-
-            <div className="mt-8  leading-8">
-              <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
-                Top Level Domain:{" "}
-                <span className="font-[300]">{topLevelDomain[0]}</span>
-              </p>
-              <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
-                Currencies:{" "}
-                <span className="font-[300]">{currencies[0].code}</span>
-              </p>
-              <p className="font-[600] text-[14px] text-textColor dark:text-white lg:text-[16px]">
-                Languages:{" "}
-                <span className="font-[300]">{languages[0].name}</span>
-              </p>
-
-              {/* Borders */}
-            </div>
-          </div>
             <div className="w-full">
               {isBorderLoading ? (
                 <Loader />

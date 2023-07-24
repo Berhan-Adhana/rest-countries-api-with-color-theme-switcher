@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const Search = ({ input, handleChange }) => {
   return (
-    <div className="relative ">
+    <div className="relative px-[55px] h-[56px] ">
       <input
         type="search"
         name="search"
@@ -11,10 +11,9 @@ const Search = ({ input, handleChange }) => {
         value={input}
         onChange={handleChange}
         placeholder="Search for a country…"
-        className="rounded-md p-3 pl-11 w-full dark:bg-[var(--container-dark-color)] dark:text-white placeholder:text-[#C4C4C4] placeholder:dark:text-white"
+        className="rounded-md h-full pl-11 max-w-sm dark:bg-[var(--container-dark-color)] dark:text-white focus:outline-none focus:border-0 placeholder:text-[#C4C4C4] placeholder:dark:text-white"
       />
-      <AiOutlineSearch className="absolute top-4 left-6" />
-      {/* </div> */}
+      <AiOutlineSearch className="absolute top-4 left-12" />
     </div>
   );
 };
